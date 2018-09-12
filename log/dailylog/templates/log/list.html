@@ -1,0 +1,22 @@
+{% extends "../base.html" %}
+
+{% block content %}
+
+<table>
+  <tr>
+    <td>
+      Log Date
+    </td>
+  </tr>
+{% for log in object_list %}
+  <tr>
+    <td>
+      <a href = {% url 'log_detail' log.id %}>
+        {{ log }}
+      </a>
+    </td>
+  </tr>
+{% endfor %}
+</table>
+
+{% endblock %}

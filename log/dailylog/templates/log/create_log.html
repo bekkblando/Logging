@@ -1,0 +1,21 @@
+{% extends "../base.html" %}
+
+{% block content %}
+
+
+<form method="post" action="/save/log?pdb">
+  {% csrf_token %}
+  {% for question in questions %}
+    <div>
+      {{ question.text }}
+    </div>
+    <div>
+      <input name = {{ question.id }}/>
+    </div>
+  {% endfor %}
+  <p>
+    <button class="waves-effect waves-light btn" type="submit">Create Question</button>
+  </p>
+</form>
+
+{% endblock %}

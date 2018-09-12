@@ -1,0 +1,4 @@
+__pycache__
+log/log/__pycache__
+log/db.sqlite3
+log/dailylog/__pycache__

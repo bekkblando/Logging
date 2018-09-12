@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% if form.errors %}
+<p>Your username and password didn't match. Please try again.</p>
+{% endif %}
+
+{% if next %}
+    {% if user.is_authenticated %}
+    <p>Your account doesn't have access to this page. To proceed,
+    please login with an account that has access.</p>
+    {% else %}
+    <p>Please login to see this page.</p>
+    {% endif %}
+{% endif %}
+<form method="post" action="{% url 'signup' %}">
+  {% csrf_token %}
+  <table>
+  <tr>
+      <td>UserName</td>
+      <td>{{ form.username }}</td>
+  </tr>
+  <tr>
+      <td>Password</td>
+      <td><input name="password" type="password"/></td>
+  </tr>
+  <tr>
+    <td>Password Confirmation</td>
+    <td><input name="password_confirmation" type="password"/></td>
+  </tr>
+  </table>
+
+  <p>
+    <button class="waves-effect waves-light btn" type="submit">Sign Up</button>
+  </p>
+  <input type="hidden" name="next" value="{{ next }}">
+</form>
+
+{% endblock %}

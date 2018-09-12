@@ -1,0 +1,30 @@
+<head>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+</head>
+
+  <nav>
+    <div class="nav-wrapper">
+      <a href= {% url 'create_log' %} class="brand-logo">Make Your Log</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href = {% url 'home' %}>Home</a></li>
+        <li><a href = {% url 'logs' %}>Logs</a></li>
+        <li><a href = {% url 'create_question' %}>Create Question</a></li>
+      </ul>
+    </div>
+  </nav>
+
+<body>
+    <div class="container center-align">
+      <div>
+          <h1>Log It All</h1>
+      </div>
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+
+<foot>
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+</foot>

@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<form method="post" action="{% url 'create_question' %}">
+  {% csrf_token %}
+  <div>
+      <div>Question Text</div>
+      <div><input name="text"/></div>
+  </div>
+  <div>
+      <div>Type - Binary/Likard/Text </div>
+      <div><input name="question_type"/></div>
+  </div>
+  <div>
+      <div>Should this be a default question? </div>
+      <div><input name="default" type="integer"/></div>
+  </div>
+
+  <p>
+    <button class="waves-effect waves-light btn" type="submit">Create Question</button>
+  </p>
+</form>
+
+{% endblock %}
